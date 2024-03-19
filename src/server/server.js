@@ -1,9 +1,13 @@
 // Aqui importamos "express", para usar sus funcionalidades y "path"
-const express = require('express')
-const path = require('path')
+import express from 'express'
+// const express = require('express')
+
+import path from 'path'
+// const path = require('path')
+
 
 // Creamos la funcion para iniciar el servidor que correra nuestra web
-const startServer = (options) => {
+export function startServer     (options) {
         const { port, public_path = 'public' } = options
 
         const app = express()
@@ -22,10 +26,4 @@ const startServer = (options) => {
         app.listen(port, () => {
                 console.log('Escuchando en el puerto', port)
         })
-}
-
-// Exportamos la funcion
-
-module.exports = {
-        startServer
 }
